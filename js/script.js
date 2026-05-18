@@ -255,6 +255,41 @@ function setupContactForm() {
     });
 }
 
+function setupApiTesting() {
+    const apiButtons = document.querySelectorAll("[data-api-btn]");
+    if (!apiButtons.length) return;
+
+    apiButtons.forEach((button) => {
+        button.addEventListener("click", async () => {
+            const target = button.dataset.apiBtn;
+            const output = document.querySelector(`[data-api-output="${target}"]`);
+
+            if (!output) return;
+            output.hidden = false;
+            output.textContent = "Loading...";
+
+            try {
+                let data;
+
+                if (target === "post") {
+                    data = await getSamplePost();
+                } else if (target === "user") {
+                    data = await getSampleUser();
+                } else if (target === "todos") {
+                    const todos = await getSampleTodos();
+                    data = todos.slice(0, 6);
+                } else {
+                    throw new Error("Unknown API action");
+                }
+
+                output.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                output.textContent = `Error: ${error.message}`;
+            }
+        });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     setupThemeToggle();
     setupNavigation();
@@ -265,4 +300,5 @@ document.addEventListener("DOMContentLoaded", () => {
     setupProjectFilters();
     setupCardDetails();
     setupContactForm();
+    setupApiTesting();
 });

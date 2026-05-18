@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="API testing page for Muhammad Zaheer portfolio with live example API calls.">
+    <title>API Testing | Muhammad Zaheer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body data-page="api-testing">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+        <a class="brand" href="index.html">Muhammad Zaheer</a>
+
+        <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-panel" id="primary-navigation">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="projects.html">Projects</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="api-testing.html">API Testing</a>
+            <button class="theme-toggle" type="button" aria-label="Switch color theme" data-theme-toggle>
+                <span class="theme-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main id="main">
+    <section class="page-hero">
+        <div class="container" data-reveal>
+            <p class="eyebrow">API Testing</p>
+            <h1>Build and test live API calls in your portfolio.</h1>
+            <p>Use these examples to fetch real data from a public API and display it inside this page. Start with one API, then add more as you learn.</p>
+            <a class="btn primary" href="about.html">Back to About</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="api-grid" data-reveal>
+                <article class="api-card">
+                    <h2>API 1: Sample Post</h2>
+                    <p>Load a sample blog post from a public JSON API.</p>
+                    <button class="btn secondary" type="button" data-api-btn="post">Fetch Post</button>
+                    <pre class="api-output" data-api-output="post" hidden aria-live="polite"></pre>
+                </article>
+
+                <article class="api-card">
+                    <h2>API 2: Sample User</h2>
+                    <p>Load sample user details from a public JSON API.</p>
+                    <button class="btn secondary" type="button" data-api-btn="user">Fetch User</button>
+                    <pre class="api-output" data-api-output="user" hidden aria-live="polite"></pre>
+                </article>
+
+                <article class="api-card">
+                    <h2>API 3: Sample Todos</h2>
+                    <p>Load a list of to-do items for a sample user from a public JSON API.</p>
+                    <button class="btn secondary" type="button" data-api-btn="todos">Fetch Todos</button>
+                    <pre class="api-output" data-api-output="todos" hidden aria-live="polite"></pre>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <p>&copy; 2026 Muhammad Zaheer. Built with HTML, CSS, and JavaScript.</p>
+</footer>
+</body>
+</html>

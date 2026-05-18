@@ -520,6 +520,42 @@ h2 {
     margin-bottom: 24px;
 }
 
+.api-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 20px;
+}
+
+.api-card {
+    display: grid;
+    gap: 16px;
+    min-height: 260px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.api-card h2 {
+    margin-bottom: 8px;
+}
+
+.api-output {
+    width: 100%;
+    min-height: 180px;
+    overflow: auto;
+    padding: 18px;
+    background: var(--surface-strong);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -697,7 +733,8 @@ textarea.is-invalid {
     .hero,
     .feature-layout,
     .about-layout,
-    .contact-layout {
+    .contact-layout,
+    .api-grid {
         grid-template-columns: 1fr;
     }
 

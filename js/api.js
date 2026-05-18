@@ -1,5 +1,5 @@
 // ===== API Configuration =====
-const API_BASE_URL = 'https://api.example.com'; // Replace with your API URL
+const API_BASE_URL = 'https://jsonplaceholder.typicode.com';
 
 // ===== API Functions =====
 
@@ -24,8 +24,7 @@ async function apiCall(endpoint, options = {}) {
             throw new Error(`API Error: ${response.status} ${response.statusText}`);
         }
 
-        const data = await response.json();
-        return data;
+        return await response.json();
     } catch (error) {
         console.error('API Call Failed:', error);
         throw error;
@@ -66,26 +65,16 @@ async function apiDelete(endpoint) {
     return apiCall(endpoint, { method: 'DELETE' });
 }
 
-// ===== Example API Calls =====
+// ===== Sample API endpoints =====
 
-// Example: Get user data
-// async function getUser(userId) {
-//     try {
-//         const user = await apiGet(`/users/${userId}`);
-//         console.log('User data:', user);
-//         return user;
-//     } catch (error) {
-//         console.error('Failed to fetch user:', error);
-//     }
-// }
+async function getSamplePost(postId = 1) {
+    return apiGet(`/posts/${postId}`);
+}
 
-// Example: Create new data
-// async function createProject(projectData) {
-//     try {
-//         const newProject = await apiPost('/projects', projectData);
-//         console.log('Project created:', newProject);
-//         return newProject;
-//     } catch (error) {
-//         console.error('Failed to create project:', error);
-//     }
-// }
+async function getSampleUser(userId = 1) {
+    return apiGet(`/users/${userId}`);
+}
+
+async function getSampleTodos(userId = 1) {
+    return apiGet(`/todos?userId=${userId}`);
+}
